@@ -20,6 +20,7 @@
 
 #define TITLE_ID 0x420000000000000E
 #define HEAP_SIZE 0x000540000
+#define DEFAULT_PORT 5000
 
 // we aren't an applet
 u32 __nx_applet_type = AppletType_None;
@@ -156,6 +157,7 @@ int main(int argc, char **argv)
         }
 
         /* initialize ftp subsystem */
+        // this is where I could pass in a listening port 
         if (ftp_init() == 0)
         {
             /* ftp loop */
